@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bất động sản World Land Corp </title>
-  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="<?= site_url() . '/wp-content/themes/tuanpho/assets/css/tailwindcss.css' ?>">
   <link rel="icon" href="https://worldlandcorp.vn/favicon.ico" type="image/x-icon" sizes="132x134">
 </head>
 
