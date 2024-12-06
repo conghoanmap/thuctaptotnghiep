@@ -152,6 +152,7 @@ function tuanpho_scripts()
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
+	wp_enqueue_style('tailwindstyle', get_template_directory_uri() . '/assets/css/output.css', array(), '1.0.0', 'all');
 }
 add_action('wp_enqueue_scripts', 'tuanpho_scripts');
 
