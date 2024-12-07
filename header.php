@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -12,17 +13,18 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<?php wp_head(); ?>
-	<link rel="stylesheet" href="<?= site_url() . '/wp-content/themes/tuanpho/assets/css/tailwindcss.css' ?>">
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <?php wp_head(); ?>
+  <link rel="stylesheet" href="<?= site_url() . '/wp-content/themes/tuanpho/assets/css/tailwindcss.css' ?>">
 </head>
 
 <body <?php body_class('class="font-roboto"'); ?>>
-<?php wp_body_open(); ?>
-	<nav
+  <?php wp_body_open(); ?>
+  <nav
     class="flex z-40 w-full h-auto items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 border-b border-divider backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl backdrop-saturate-150 bg-background/70"
     style="--navbar-height:4rem">
     <header
@@ -30,7 +32,7 @@
       <ul
         class="flex gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 sm:hidden"
         data-justify="start"><button
-        id="open-close-menu"
+          id="open-close-menu"
           class="group flex items-center justify-center w-6 h-full rounded-small tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
           type="button" aria-label="Close menu" aria-pressed="true" style="user-select: none;" data-open="true"><span
             class="sr-only">close navigation menu</span><span
@@ -64,7 +66,27 @@
         </a>
       </div>
       <ul
+        <?php
+        wp_nav_menu(array(
+          'theme_location'  => 'menu-1',
+          'menu'            => '',
+          'container'       => 'false',
+          'menu_class'      => 'ul',
+          'menu_id'         => 'nav-menu',
+          'echo'            => true,
+          'fallback_cb'     => 'wp_page_menu',
+          'before'          => '',
+          'after'           => '',
+          'link_before'     => '',
+          'link_after'      => '',
+          'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+          'depth'           => 0,
+          'walker'          => '',
+        ));
+        ?>
+        id="nav-menu"
         class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden sm:flex gap-4">
+        <!-- navbar -->
         <li class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"><a
             class="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium no-underline hover:opacity-80 active:opacity-disabled transition-opacity text-green-800 font-bold uppercase"
             tabindex="0" role="link" href="#">Trang chủ</a></li>
@@ -87,6 +109,7 @@
               nhượng</span>
           </div>
         </a>
+        <!-- end navbar -->
       </ul>
       <ul
         class="flex gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0"
