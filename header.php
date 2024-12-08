@@ -65,13 +65,12 @@
               width="80" aria-hidden="true"></div>
         </a>
       </div>
-      <ul
-        <?php
+      <?php
         wp_nav_menu(array(
           'theme_location'  => 'menu-1',
           'menu'            => '',
           'container'       => 'false',
-          'menu_class'      => 'ul',
+          'menu_class'      => 'h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden sm:flex gap-4',
           'menu_id'         => 'nav-menu',
           'echo'            => true,
           'fallback_cb'     => 'wp_page_menu',
@@ -84,33 +83,6 @@
           'walker'          => '',
         ));
         ?>
-        id="nav-menu"
-        class="h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0 hidden sm:flex gap-4">
-        <!-- navbar -->
-        <li class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"><a
-            class="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium no-underline hover:opacity-80 active:opacity-disabled transition-opacity text-green-800 font-bold uppercase"
-            tabindex="0" role="link" href="#">Trang chủ</a></li>
-        <li class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"><a
-            class="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium no-underline hover:opacity-80 active:opacity-disabled transition-opacity text-green-800 font-bold uppercase"
-            tabindex="0" role="link" href="#">Sang nhượng</a></li>
-        <li class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold"><a
-            class="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium no-underline hover:opacity-80 active:opacity-disabled transition-opacity text-green-800 font-bold uppercase"
-            tabindex="0" role="link" href="#">Thông tin dự án</a></li><a
-          class="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity"
-          tabindex="0" role="link" href="#">
-          <div
-            class="relative max-w-fit inline-flex items-center justify-between box-border whitespace-nowrap px-2 h-8 text-medium rounded-full shadow-lg bg-default text-default-foreground bg-gradient-to-br from-green-500 to-yellow-500 border-small border-white/50 shadow-pink-500/30">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="max-h-[80%] w-6 h-6 text-white">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59">
-              </path>
-            </svg><span class="flex-1 font-normal px-2 pl-1 drop-shadow shadow-black text-white">Đăng tin sang
-              nhượng</span>
-          </div>
-        </a>
-        <!-- end navbar -->
-      </ul>
       <ul
         class="flex gap-4 h-full flex-row flex-nowrap items-center data-[justify=start]:justify-start data-[justify=start]:flex-grow data-[justify=start]:basis-0 data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=end]:flex-grow data-[justify=end]:basis-0"
         data-justify="end">
