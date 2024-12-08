@@ -21,6 +21,88 @@ if (! defined('_S_VERSION')) {
  * as indicating support for post thumbnails.
  */
 
+//Thêm đoạn code sau vào functions.php
+function wpshare247_theme_support()
+{
+	remove_theme_support('widgets-block-editor');
+}
+add_action('after_setup_theme', 'wpshare247_theme_support');
+
+//tạo 2 widget mới
+function wpshare247_widgets_init()
+{
+	// Thêm widget 1
+	register_sidebar(array(
+		'name'          => __('widget_1', 'text_domain'), // Tên sidebar hiển thị trong admin
+		'id'            => 'sidebar-widget-1', // ID của sidebar không được trùng, dùng để hiển thị SB
+		'description'   => __('Thêm các widget *[widget_1] vào đây', 'text_domain'), // Mô tả cho SB nảy
+		'before_widget' => '<section id="%1$s" class="widget %2$s">', // Bạn có thể thêm Class cho SB vào đây
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">', // Thẻ mở để tạo tiêu đề chung cho tất cả các Widget nẳm trong Sidebar này
+		'after_title'   => '</h2>', // Đóng thẻ tiêu đề
+	));
+
+	// Thêm widget 2
+	register_sidebar(array(
+		'name'          => __('widget_2', 'text_domain'),
+		'id'            => 'sidebar-widget-2',
+		'description'   => __('Thêm các widget *[widget_2] vào đây', 'text_domain'),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
+
+	// Thêm widget liên kết mạng xã hội
+	register_sidebar(array(
+		'name'          => __('widget_fb', 'text_domain'),
+		'id'            => 'sidebar-widget-fb',
+		'description'   => __('Thêm các widget *[widget_2] vào đây', 'text_domain'),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
+
+	// Thêm widget map
+	register_sidebar(array(
+		'name'          => __('widget_map', 'text_domain'),
+		'id'            => 'sidebar-widget-map',
+		'description'   => __('Thêm các widget *[widget_2] vào đây', 'text_domain'),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
+
+	// Thêm Footer
+	register_sidebar(array(
+		'name'          => __('Footer', 'text_domain'),
+		'id'            => 'sidebar-footer',
+		'description'   => __('Thêm các widget *[Footer] vào đây', 'text_domain'),
+		'before_widget' => '<section id="%1$s" class="widget sb-right %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
+}
+add_action('widgets_init', 'wpshare247_widgets_init');
+
+//đăng ký widget mới
+function wpshare247_register_widgets(){
+    //Khai báo widget mới
+    $file = realpath(dirname(__FILE__)).'/widgets/wpshare247_simple.php';
+    require_once($file);
+    register_widget('wpshare247_simple');
+    
+    //Hãy tiếp tục khai báo thêm các WG khác như bên dưới
+    /*$file = realpath(dirname(__FILE__)).'/widgets/wpshare247_simple_2.php';
+    require_once($file);
+    register_widget('wpshare247_simple_2');*/
+    
+}
+add_action('widgets_init', 'wpshare247_register_widgets');
+
 function tuanpho_setup()
 {
 	/*
