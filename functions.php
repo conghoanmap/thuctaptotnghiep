@@ -89,17 +89,17 @@ function wpshare247_widgets_init()
 add_action('widgets_init', 'wpshare247_widgets_init');
 
 //đăng ký widget mới
-function wpshare247_register_widgets(){
-    //Khai báo widget mới
-    $file = realpath(dirname(__FILE__)).'/widgets/wpshare247_simple.php';
-    require_once($file);
-    register_widget('wpshare247_simple');
-    
-    //Hãy tiếp tục khai báo thêm các WG khác như bên dưới
-    /*$file = realpath(dirname(__FILE__)).'/widgets/wpshare247_simple_2.php';
+function wpshare247_register_widgets()
+{
+	//Khai báo widget mới
+	$file = realpath(dirname(__FILE__)) . '/widgets/wpshare247_simple.php';
+	require_once($file);
+	register_widget('wpshare247_simple');
+
+	//Hãy tiếp tục khai báo thêm các WG khác như bên dưới
+	/*$file = realpath(dirname(__FILE__)).'/widgets/wpshare247_simple_2.php';
     require_once($file);
     register_widget('wpshare247_simple_2');*/
-    
 }
 add_action('widgets_init', 'wpshare247_register_widgets');
 
